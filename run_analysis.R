@@ -98,4 +98,5 @@ meanstdall<-select(meanstdall,personid,activity,1:79,-data)
 avgdata<-summarize_all(group_by(meanstdall,personid,activity),funs(mean))
 View(avgdata)
 
-
+##Write the file
+write.table(avgdata,"tidyHRdata.txt", row.names = FALSE)
